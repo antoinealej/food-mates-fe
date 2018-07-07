@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
-import './App.css';
-import Button from '@material-ui/core/Button';
+import Login from './components/login';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 class App extends Component {
   render() {
     return (
-      <div className="homepage">
-        <Button variant="contained" color="primary" href="/containers/login.js">
-          Login page
-        </Button>
-      </div>
+      <BrowserRouter>
+          <Route path='/' component={Login} />
+      </BrowserRouter>
     );
   }
 }
