@@ -1,4 +1,4 @@
-.homepage {
+.homepage__background-image {
   background-image: url('./assets/img/home_bkground.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -9,6 +9,13 @@
   position: fixed;
   top: 0;
   left: 0;
-  opacity: 0.5;
 }
 
+.homepage__logo-container {
+  top: 30px;
+  left: 100px;
+  text-align: center;
+  background-color: red;
+  height: 300px;
+  width: 300px;
+}
