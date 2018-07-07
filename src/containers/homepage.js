@@ -3,7 +3,7 @@ import './homepage.css';
 import Button from '@material-ui/core/Button';
 import Logo from '../assets/img/FoodmatesLogoGBG.png';
 
-class App extends Component {
+class HomePage extends Component {
   render() {
     return (
       <div className="homepage">
@@ -25,4 +25,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default HomePage;
