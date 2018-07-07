@@ -1,0 +1,60 @@
+.container {
+  margin-bottom: 90px;
+}
+
+.title {
+  display: flex;
+  color: black;
+  justify-content: center;
+  padding-top: 25px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.food-image {
+  background-color: lemonchiffon;
+  height: 250px;
+  width: 100%;
+}
+
+.tag-text {
+  color: #545454;
+  font-size: 15px;
+}
+
+.food-form-container {
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 20px;
+  font-size: 13px;
+  color: #545454;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-category {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.input {
+  margin-top: 5px;
+  padding: 7px;
+  border: 1px solid #545454;
+  border-radius: 10px;
+  width: 100%;
+  outline: none;
+}
+
+.input-expiry {
+  margin-top: 5px;
+  padding: 9px;
+  border: 1px solid #545454;
+  border-radius: 15px;
+  outline: none;
+  width: 30%;
+}
