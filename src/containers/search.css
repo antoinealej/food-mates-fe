@@ -1,6 +1,6 @@
-.search button {
-  margin: 10px;
-} 
-input {
-  display: 'none',
+.search .searchRow {
+  padding: 16px;
+}
+.search .searchRow button {
+  margin-right: 10px;
 }
