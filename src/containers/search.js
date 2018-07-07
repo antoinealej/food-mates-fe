@@ -10,6 +10,7 @@ import SimpleDialog from '../components/search/SimpleDialog';
 import categories from '../models/category';
 import './search.css';
 import coffeeImage from '../assets/img/pexels-photo-416441.jpg';
+import config from '../config';
 
 const items = [
   { name: 'Coffee Beans', category: categories[0], image: coffeeImage },
@@ -70,9 +71,21 @@ class Search extends Component {
     return (
       <div className="search">
         <div className="searchRow">
-          <Button variant={categoryButtonVariant} color="primary" onClick={this.handleClickOpen}>{categoryDisplay}</Button>
-          <Button variant="outlined" color="primary" onClick={this.handleClickOpen}>Bought From</Button>
-          
+          <Button
+            variant={categoryButtonVariant}
+            color="primary"
+            onClick={this.handleClickOpen}
+          >
+            {categoryDisplay}
+          </Button>
+          <Button
+            variant="outlined"
+            color="primary"
+            onClick={this.handleClickOpen}
+          >
+            Bought From
+          </Button>
+
           <label for="camera-file">
             Camera
           </label>

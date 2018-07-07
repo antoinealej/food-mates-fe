@@ -3,6 +3,7 @@ import './homepage.css';
 import Button from '@material-ui/core/Button';
 import Logo from '../assets/img/FoodmatesLogoGBG.png';
 import { login, register } from '../utils/auth';
+import config from '../config';
 
 export default class HomePage extends Component {
   render() {
@@ -20,8 +21,8 @@ export default class HomePage extends Component {
               className="homepage__btn-login"
               variant="contained"
               color="primary"
-              href="/containers/login.js"
-              style={{backgroundColor: '#50E3C2'}}
+              href="/login"
+              style={{backgroundColor: config.teal_colour}}
               onClick={() => login('user', 'pass')}
             >
               Log in
@@ -30,8 +31,8 @@ export default class HomePage extends Component {
               className="homepage__btn-signup"
               variant="contained"
               color="primary"
-              href="/containers/login.js"
-              style={{backgroundColor: '#50E3C2', marginTop: '5%'}}
+              href="/login"
+              style={{backgroundColor: config.teal_colour, marginTop: '5%'}}
               onClick={() => register('user', 'pass')}
             >
               Sign up

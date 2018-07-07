@@ -3,6 +3,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Chip from '@material-ui/core/Chip';
 import Button from '@material-ui/core/Button';
 import FoodCategory from '../components/foodCategory';
+import config from '../config';
 import './food-form.css';
 
 const labels = [
@@ -98,7 +99,7 @@ export default class FoodForm extends Component {
               className="login__btn-login"
               variant="contained"
               color="primary"
-              style={{backgroundColor: '#50E3C2'}}>
+              style={{backgroundColor: config.teal_colour}}>
               SUBMIT
             </Button>
 
