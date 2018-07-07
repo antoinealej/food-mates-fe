@@ -6,6 +6,7 @@ import ListItem from '@material-ui/core/ListItem';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Dialog from '@material-ui/core/Dialog';
 import categories from '../../models/category';
+import config from '../../config';
 
 class SimpleDialog extends Component {
   constructor(props) {
@@ -31,7 +32,7 @@ class SimpleDialog extends Component {
 
   render() {
     const { open, categories, selectedCategory, onClose } = this.props;
-    
+
     return (
       <Dialog onClose={this.handleClose} aria-labelledby="simple-dialog-title" open={open}>
         <DialogTitle id="simple-dialog-title">Category</DialogTitle>
@@ -41,12 +42,24 @@ class SimpleDialog extends Component {
               const buttonVariant = category === this.state.selectedCategory ? 'contained' : 'outlined';
               return (
                 <ListItem key={index}>
-                  <Button variant={buttonVariant} color="primary" onClick={() => this.handleListItemClick(category)}>{category}</Button>
+                  <Button
+                    variant={buttonVariant}
+                    color="primary"
+                    onClick={() => this.handleListItemClick(category)}
+                  >
+                    {category}
+                  </Button>
                 </ListItem>
               )
             })}
             <ListItem button onClick={this.handleClose}>
-              <Button variant="contained" color="primary" onClick={this.handleClickOpen}>Search</Button>
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={this.handleClickOpen}
+              >
+                Search
+              </Button>
             </ListItem>
           </List>
         </div>

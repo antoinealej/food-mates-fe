@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './login.css';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
+import config from '../config';
 
 export default class Login extends Component {
   render() {
@@ -31,8 +32,9 @@ export default class Login extends Component {
             className="login__btn-login"
             variant="contained"
             color="primary"
-            href="/containers/login.js"
-            style={{backgroundColor: '#50E3C2', marginTop: '40%'}}>
+            href="/search"
+            style={{backgroundColor: config.teal_colour, marginTop: '40%'}}
+          >
             Login
           </Button>
         </div>
