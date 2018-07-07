@@ -1,0 +1,22 @@
+.login__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70%;
+  height: 100%;
+  margin: 10% 15%;
+}
+
+.login__title {
+  font-size: 20px;
+  color: #50E3C2;
+  width: 100%;
+  text-align: center;
+}
+
+.login__input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 15%;
+}
