@@ -15,7 +15,7 @@ import Typography from '@material-ui/core/Typography';
 import blue from '@material-ui/core/colors/blue';
 import './search.css';
 
-const emails = ['username@gmail.com', 'user02@gmail.com'];
+const items = ['Packaged Food', 'Fresh Food', 'Cooked Food'];
 const styles = {
   avatar: {
     backgroundColor: blue[100],
@@ -37,17 +37,17 @@ class SimpleDialog extends React.Component {
 
     return (
       <Dialog onClose={this.handleClose} aria-labelledby="simple-dialog-title" {...other}>
-        <DialogTitle id="simple-dialog-title">Set backup account</DialogTitle>
+        <DialogTitle id="simple-dialog-title">CATEGORY</DialogTitle>
         <div>
           <List>
-            {emails.map(email => (
-              <ListItem button onClick={() => this.handleListItemClick(email)} key={email}>
+            {items.map(item => (
+              <ListItem button onClick={() => this.handleListItemClick(item)} key={item}>
                 <ListItemAvatar>
                   <Avatar className={classes.avatar}>
                     <PersonIcon />
                   </Avatar>
                 </ListItemAvatar>
-                <ListItemText primary={email} />
+                <ListItemText primary={item} />
               </ListItem>
             ))}
             <ListItem button onClick={() => this.handleListItemClick('addAccount')}>
@@ -77,7 +77,7 @@ const SimpleDialogWrapped = withStyles(styles)(SimpleDialog);
 export default class Search extends Component {
   state = {
     open: false,
-    selectedValue: emails[1],
+    selectedValue: items[1],
   };
 
   handleClickOpen = () => {
