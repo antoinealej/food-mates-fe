@@ -12,7 +12,12 @@
 }
 
 .food-image {
-  background-color: lemonchiffon;
+  margin-top: 30px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center center;
   height: 250px;
   width: 100%;
 }
@@ -57,4 +62,8 @@
   border-radius: 15px;
   outline: none;
   width: 30%;
+}
+
+.user-dropzone-img {
+  width: 100%;
 }

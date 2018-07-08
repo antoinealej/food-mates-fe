@@ -23,19 +23,19 @@ export async function createFoodOrigin(name) {
 }
 
 export async function listFoodOrigin() {
-  const result = await fetch(`${config.backend_url}/food-origin/list`, {
+  return fetch(`${config.backend_url}/food-origin/list`, {
     method: 'GET',
-    mode: 'no-cors',
     headers: {
       'content-type': 'application/json',
-      'authorization': 'token token'
+    }
+  }).then(res => {
+    if (res.ok) {
+      return res.json().then((data) => {
+        return data;
+      });
+    } else {
+      console.log("Looks like the response wasn't perfect, got status", res.status);
+      return [];
     }
   });
-
-  if (result.ok) {
-    const data = await result.json();
-    return data;
-  }
-
-  throw new Error('something wrong with listFoodOrigin');
 }
