@@ -4,3 +4,25 @@
 .search .searchRow button {
   margin-right: 10px;
 }
+
+.search__title-container {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 13px;
+  width: 100%;
+}
+
+.search__title {
+  width: 35%;
+  color: black;
+  align-self: center;
+  font-weight: bold;
+  font-size: 16px;
+  /* background-color: red */
+}
+
+.search__right-icon {
+  align-self: center;
+  width: 50%;
+  /* background-color: blue */
+}

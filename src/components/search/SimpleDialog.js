@@ -46,6 +46,7 @@ class SimpleDialog extends Component {
                     variant={buttonVariant}
                     color="primary"
                     onClick={() => this.handleListItemClick(category)}
+                    style={{color: config.teal_colour, borderRadius: '15px'}}
                   >
                     {category}
                   </Button>
@@ -57,6 +58,7 @@ class SimpleDialog extends Component {
                 variant="contained"
                 color="primary"
                 onClick={this.handleClickOpen}
+                style={{color: config.teal_colour, borderRadius: '15px'}}
               >
                 Search
               </Button>
