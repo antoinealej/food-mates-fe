@@ -75,6 +75,7 @@ class Search extends Component {
             variant={categoryButtonVariant}
             color="primary"
             onClick={this.handleClickOpen}
+            style={{color: config.teal_colour, borderRadius: '15px'}}
           >
             {categoryDisplay}
           </Button>
@@ -82,6 +83,7 @@ class Search extends Component {
             variant="outlined"
             color="primary"
             onClick={this.handleClickOpen}
+            style={{color: config.teal_colour, borderRadius: '15px'}}
           >
             Bought From
           </Button>

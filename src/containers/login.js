@@ -33,7 +33,7 @@ export default class Login extends Component {
             variant="contained"
             color="primary"
             href="/search"
-            style={{backgroundColor: config.teal_colour, marginTop: '40%'}}
+            style={{backgroundColor: config.teal_colour, marginTop: '40%', borderRadius: '15px'}}
           >
             Login
           </Button>

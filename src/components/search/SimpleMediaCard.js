@@ -32,7 +32,7 @@ function SimpleMediaCard(props) {
           <Button
             variant="contained"
             color="primary"
-            style={{backgroundColor: config.teal_colour}}
+            style={{backgroundColor: config.teal_colour, borderRadius: '15px'}}
           >
             {category}
           </Button>

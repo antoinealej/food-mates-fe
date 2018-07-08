@@ -22,7 +22,7 @@ export default class HomePage extends Component {
               variant="contained"
               color="primary"
               href="/login"
-              style={{backgroundColor: config.teal_colour}}
+              style={{backgroundColor: config.teal_colour, borderRadius: '15px'}}
               onClick={() => login('user', 'pass')}
             >
               Log in
@@ -32,7 +32,7 @@ export default class HomePage extends Component {
               variant="contained"
               color="primary"
               href="/login"
-              style={{backgroundColor: config.teal_colour, marginTop: '5%'}}
+              style={{backgroundColor: config.teal_colour, marginTop: '5%', borderRadius: '15px'}}
               onClick={() => register('user', 'pass')}
             >
               Sign up
