@@ -20,12 +20,14 @@ export default class Login extends Component {
             margin="normal"
           />
 
-          <TextField
+          <TextField 
             id="login__password"
             label="Password"
             placeholder="Password"
             className="test"
             margin="normal"
+            type="password"
+            autoComplete="current-password"
           />
 
           <Button
