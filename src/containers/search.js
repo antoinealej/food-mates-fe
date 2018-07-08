@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import Dialog from '@material-ui/core/Dialog';
+import AppBar from '@material-ui/core/AppBar';
 import SimpleMediaCard from '../components/search/SimpleMediaCard';
 import SimpleDialog from '../components/search/SimpleDialog';
 import categories from '../models/category';
@@ -13,6 +10,8 @@ import coffeeImage from '../assets/img/pexels-photo-416441.jpg';
 import croissantImage from '../assets/img/MVIMG_20180708_113456.jpg';
 import skittlesImage from '../assets/img/MVIMG_20180708_112858.jpg';
 import cokeImage from '../assets/img/MVIMG_20180708_112907.jpg';
+import Icon from '@material-ui/core/Icon';
+import AddCircleIcon from '@material-ui/icons/AddCircle';
 import config from '../config';
 
 const items = [
@@ -73,6 +72,22 @@ class Search extends Component {
 
     return (
       <div className="search">
+        <AppBar
+          position="static"
+          style={{
+            backgroundColor: '#F9F9F9',
+            height: 60
+          }}
+        >
+          <div className="search__title-container">
+            <div className="search__title">
+              Search
+            </div>
+            <Button className="test__right" color="inherit" href='/form'>
+              <AddCircleIcon className="search__right-icon" color="primary" style={{ color: config.teal_colour }}/>
+            </Button>
+          </div>
+        </AppBar>
         <div className="searchRow">
           <Button
             variant={categoryButtonVariant}
@@ -91,11 +106,11 @@ class Search extends Component {
             Bought From
           </Button>
 
-          <label for="camera-file">
+          {/* <label for="camera-file">
             Camera
           </label>
           <input id="camera-file" type="file" accept="image/*" capture="environment" style={{ display: 'none' }} onChange={this.handleCameraChange} />
-          <img id="camera-img" style={{ width: '100%' }} />
+          <img id="camera-img" style={{ width: '100%' }} /> */}
 
           <SimpleDialog
             selectedCategory={this.state.selectedCategory}

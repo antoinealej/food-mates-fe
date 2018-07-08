@@ -58,7 +58,7 @@ export default class FoodForm extends Component {
           position="static"
           style={{
             backgroundColor: '#F9F9F9',
-            height: 70
+            height: 60
           }}
         >
           <div className="title">
@@ -66,7 +66,7 @@ export default class FoodForm extends Component {
           </div>
         </AppBar>
 
-        <div className="food-image" />
+        {/* <div className="food-image" /> */}
         <div className="food-form-container">
           <form onSubmit={this.handleSubmit} className="form">
 
