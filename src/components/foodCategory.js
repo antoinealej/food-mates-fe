@@ -2,6 +2,15 @@ import React, { Component } from 'react';
 import Chip from '@material-ui/core/Chip';
 
 export default class FoodCategory extends Component {
+  constructor(props){
+    super(props);
+
+    this.retrieveData = this.retrieveData.bind(this);
+  }
+
+  retrieveData(e) {
+    this.props.sendDataBack(e);
+  }
 
   render() {
     const { label, chip } = this.props;
@@ -17,6 +26,7 @@ export default class FoodCategory extends Component {
             style={{
               margin: 5
             }}
+            onClick={this.retrieveData}
           />))}
         </div>
       </div>
