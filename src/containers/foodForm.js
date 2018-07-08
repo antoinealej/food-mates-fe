@@ -2,11 +2,17 @@ import React, { Component } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Chip from '@material-ui/core/Chip';
 import Button from '@material-ui/core/Button';
+import Dropzone from 'react-dropzone';
 import FoodCategory from '../components/foodCategory';
 import config from '../config';
+import placeholderFood from '../assets/img/placeholder-food.jpg';
+import { listCategories } from '../utils/category';
+import { listFoodOrigin } from '../utils/foodOrigin';
 import './food-form.css';
 
-const labels = [
+console.log(placeholderFood);
+
+const staticLabels = [
   {
     label: 'Category',
     chips: ['Packaged Food', 'Fresh food', 'Cooked Food']
@@ -25,9 +31,7 @@ const labels = [
   }
 ];
 
-
 export default class FoodForm extends Component {
-
   constructor(props) {
     super(props);
 
@@ -38,10 +42,28 @@ export default class FoodForm extends Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.getDataFromCategory = this.getDataFromCategory.bind(this);
+    this.onImageDrop = this.onImageDrop.bind(this);
+  }
+
+  componentDidMount() {
+    listCategories().then((categories) => {
+      let labels = this.state.labels || staticLabels;
+      labels[0].chips = categories.map(cat => cat.name);
+      this.setState({ labels })
+    });
+    listFoodOrigin().then((foodOrigines) => {
+      let labels = this.state.labels || staticLabels;
+      labels[1].chips = foodOrigines.map(food => food.name);
+      this.setState({ labels })
+    });
+
   }
 
   handleSubmit(e) {
-    this.setState({ value: e.target.value })
+    e.preventDefault();
+    console.log(e.target.value)
+    this.setState({ value: e.target.value });
+
   }
 
   getDataFromCategory(data) {
@@ -51,7 +73,15 @@ export default class FoodForm extends Component {
     })
   }
 
+  onImageDrop(files) {
+    this.setState({
+      uploadImage: files[0]
+    });
+  }
+
   render() {
+    const uploadImage = this.state && this.state.uploadImage;
+    const labels = (this.state && this.state.labels) || [];
     return (
       <div className="container">
         <AppBar
@@ -66,7 +96,15 @@ export default class FoodForm extends Component {
           </div>
         </AppBar>
 
-        {/* <div className="food-image" /> */}
+        <Dropzone
+          className="food-image"
+          multiple={false}
+          accept="image/*"
+          onDrop={this.onImageDrop.bind(this)}
+          style={{
+            backgroundImage: `url(${uploadImage && uploadImage.preview || placeholderFood})`
+          }}>
+        </Dropzone>
         <div className="food-form-container">
           <form onSubmit={this.handleSubmit} className="form">
 
@@ -106,6 +144,7 @@ export default class FoodForm extends Component {
             </div>
 
             <Button
+              type="submit"
               className="login__btn-login"
               variant="contained"
               color="primary"
