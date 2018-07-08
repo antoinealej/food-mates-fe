@@ -10,13 +10,16 @@ import SimpleDialog from '../components/search/SimpleDialog';
 import categories from '../models/category';
 import './search.css';
 import coffeeImage from '../assets/img/pexels-photo-416441.jpg';
+import croissantImage from '../assets/img/MVIMG_20180708_113456.jpg';
+import skittlesImage from '../assets/img/MVIMG_20180708_112858.jpg';
+import cokeImage from '../assets/img/MVIMG_20180708_112907.jpg';
 import config from '../config';
 
 const items = [
-  { name: 'Coffee Beans', category: categories[0], image: coffeeImage },
-  { name: 'Coffee Beans2', category: categories[1], image: coffeeImage },
-  { name: 'Coffee Beans3', category: categories[2], image: coffeeImage },
-  { name: 'Coffee Beans4', category: categories[1], image: coffeeImage },
+  { name: 'Maltesers', category: categories[0], image: coffeeImage },
+  { name: 'Croissant', category: categories[1], image: croissantImage },
+  { name: 'Skittles', category: categories[2], image: skittlesImage },
+  { name: 'Coca Cola', category: categories[1], image: cokeImage },
 ];
 
 class Search extends Component {
