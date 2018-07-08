@@ -148,7 +148,8 @@ export default class FoodForm extends Component {
               className="login__btn-login"
               variant="contained"
               color="primary"
-              style={{backgroundColor: config.teal_colour}}>
+              style={{backgroundColor: config.teal_colour}}
+              href="/search">
               SUBMIT
             </Button>
 
