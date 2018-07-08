@@ -1,5 +1,5 @@
 import config from '../config';
-import fetch from './fetch';
+// import fetch from './fetch';
 
 export async function createCategory(name) {
   const result = await fetch(`${config.backend_url}/category/create`, {
@@ -22,20 +22,20 @@ export async function createCategory(name) {
   throw new Error('something wrong with createCategory');
 }
 
-export async function listItems() {
-  const result = await fetch(`${config.backend_url}/category/list`, {
+export async function listCategories() {
+  return fetch(`${config.backend_url}/category/list`, {
     method: 'GET',
-    mode: 'no-cors',
     headers: {
       'content-type': 'application/json',
-      'authorization': 'token token'
+    }
+  }).then(res => {
+    if (res.ok) {
+      return res.json().then((data) => {
+        return data;
+      });
+    } else {
+      console.log("Looks like the response wasn't perfect, got status", res.status);
+      return [];
     }
   });
-
-  if (result.ok) {
-    const data = await result.json();
-    return data;
-  }
-
-  throw new Error('something wrong with listCategory');
 }

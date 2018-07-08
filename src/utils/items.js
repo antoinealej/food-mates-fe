@@ -1,7 +1,15 @@
 import config from '../config';
 import fetch from './fetch';
 
-export async function createItem(item) {
+export async function createItem({ file, title, description, category, foodOrigin, expiryDate, usedCondition }) {
+  var data = new FormData();
+  data.append('photo', file);
+  data.append('title', title);
+  data.append('description', description);
+  data.append('category', category);
+  data.append('foodOrigin', foodOrigin);
+  data.append('expiryDate', expiryDate);
+  data.append('usedCondition', usedCondition);
   const result = await fetch(`${config.backend_url}/item/create`, {
     method: 'POST',
     mode: 'no-cors',
@@ -9,10 +17,10 @@ export async function createItem(item) {
       'content-type': 'application/json',
       'authorization': 'token token'
     },
-    body: JSON.stringify(items)
+    body: data
   });
 
-  console.log('what is result', result)
+  console.log('what is result', result);
 
   if (result.ok) {
     const data = await result.json();
@@ -23,19 +31,19 @@ export async function createItem(item) {
 }
 
 export async function listItems() {
-  const result = await fetch(`${config.backend_url}/item/list`, {
+  return fetch(`${config.backend_url}/item/list`, {
     method: 'GET',
-    mode: 'no-cors',
     headers: {
       'content-type': 'application/json',
-      'authorization': 'token token'
+    }
+  }).then(res => {
+    if (res.ok) {
+      return res.json().then((data) => {
+        return data;
+      });
+    } else {
+      console.log("Looks like the response wasn't perfect, got status", res.status);
+      return [];
     }
   });
-
-  if (result.ok) {
-    const data = await result.json();
-    return data;
-  }
-
-  throw new Error('something wrong with listItems');
 }
