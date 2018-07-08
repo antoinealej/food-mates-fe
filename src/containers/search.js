@@ -5,6 +5,7 @@ import AppBar from '@material-ui/core/AppBar';
 import SimpleMediaCard from '../components/search/SimpleMediaCard';
 import SimpleDialog from '../components/search/SimpleDialog';
 import categories from '../models/category';
+import boughtFrom from '../models/boughtFrom';
 import './search.css';
 import coffeeImage from '../assets/img/pexels-photo-416441.jpg';
 import croissantImage from '../assets/img/MVIMG_20180708_113456.jpg';
@@ -25,6 +26,7 @@ class Search extends Component {
   state = {
     open: false,
     selectedCategory: '',
+    selectedBoughtFrom: ''
   };
 
   handleClickOpen = () => {
