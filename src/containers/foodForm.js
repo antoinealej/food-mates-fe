@@ -32,14 +32,23 @@ export default class FoodForm extends Component {
     super(props);
 
     this.state = {
-      value: ''
+      value: '',
+      dataFromChildren: null
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.getDataFromCategory = this.getDataFromCategory.bind(this);
   }
 
   handleSubmit(e) {
     this.setState({ value: e.target.value })
+  }
+
+  getDataFromCategory(data) {
+
+    this.setState({
+      dataFromChildren: data
+    })
   }
 
   render() {
@@ -75,6 +84,7 @@ export default class FoodForm extends Component {
               key={label.label}
               label={label.label}
               chip={label.chips}
+              sendDataBack={this.getDataFromCategory}
             />)}
 
             <div className="form-category">
@@ -102,7 +112,6 @@ export default class FoodForm extends Component {
               style={{backgroundColor: config.teal_colour}}>
               SUBMIT
             </Button>
-
 
           </form>
         </div>
