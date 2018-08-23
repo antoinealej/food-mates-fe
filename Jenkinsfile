@@ -3,8 +3,5 @@ node() {
   stage('Checkout') {
     checkout scm
   }
-  // Initializing the tools
-  stage ('Init') {
-    initLib() 
-  }
+  sh "echo 'been there!'"
 }
